@@ -1,0 +1,3 @@
+silakan buat website one page dengan sticky menu
+tema bebas dan gambar silakan tentukan sendiri
+boleh menggunakan bootstrap

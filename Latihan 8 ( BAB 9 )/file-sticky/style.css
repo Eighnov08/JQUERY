@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: normal 14px Arial;
+}
+
+.header {
+    width: 100%;
+    background: red;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+}
+
+.nav {
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    display: none;
+    cursor: pointer;
+}
+
+.main {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.lorem {
+    width: 50%;
+    margin: 20px auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+#home {
+    background-color: yellow;
+    padding: 20px;
+    padding-bottom: 500px;
+}
+
+#profile {
+    background-color: blue;
+    padding: 20px;
+    padding-bottom: 500px;
+}
+
+#gallery {
+    background-color: green;
+    padding: 20px;
+    padding-bottom: 500px;
+}

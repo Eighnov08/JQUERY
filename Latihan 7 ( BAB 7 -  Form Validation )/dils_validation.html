@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Username<code id="err_username"><span id="err_span_username"></span></code></label>
+                        <input type="text" name="username" id="username" placeholder="Username" class="form-control">
+
+                        <label>Password<code id="err_pass"><span id="err_span_pass"></span></code></label>
+                        <input type="password" name="password" id="pass" placeholder="Password" class="form-control">
+
+                        <label>Re-Type Password<code id="err_re_pass"><span id="err_span_re_pass"></span></code></label>
+                        <input type="password" name="re_password" id="re_pass" placeholder="Re-Type Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+        $(document).ready(function() {
+            $("#err_username").hide();
+            $("#err_pass").hide();
+            $("#err_re_pass").hide();
+
+            $("#submit").click(function() {
+                if ($("#username").val() == "") {
+                    $("#err_username").show();
+                    $("#err_span_username").text(" Wajib Diisi!!");
+                } else if ($("#username").val().length < 5) {
+                    $("#err_username").show();
+                    $("#err_span_username").text(" Minimal 5 Karakter");
+                } else if ($("#username").val().length > 12) {
+                    $("#err_username").show();
+                    $("#err_span_username").text(" Maksimal 12 Karakter");
+                } else {
+                    $("err_username").hide();
+                }
+
+                if ($("#pass").val() == "") {
+                    $("#err_pass").show();
+                    $("#err_span_pass").text(" Wajib Diisi!!");
+                } else if ($("#pass").val().length < 6) {
+                    $("#err_pass").show();
+                    $("#err_span_pass").text(" Minimal 6 Karakter");
+                } else if ($("#pass").val().length > 12) {
+                    $("#err_pass").show();
+                    $("#err_span_pass").text(" Maksimal 12 Karakter");
+                } else {
+                    $("err_pass").hide();
+                }
+
+                if ($("#re_pass").val() == "") {
+                    $("#err_re_pass").show();
+                    $("#err_span_re_pass").text(" Wajib Diisi!!");
+                } else if ($("#re_pass").val() !== $("#pass").val()) {
+                    $("#err_re_pass").show();
+                    $("#err_span_re_pass").text(" Tidak Cocok!!");
+                } else {
+                    $("err_re_pass").hide();
+                }
+
+                return false;
+            })
+        })
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

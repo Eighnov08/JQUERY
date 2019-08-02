@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            text-align: center;
+            border: 1px solid #000000;
+            padding: 10px;
+            margin: 15px;
+            background-color: white;
+        }
+        
+        .bg {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <button>Ubah</button>
+        <p></p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("body").toggleClass("bg");
+                var a = $("body").attr("class");
+                if (a == "bg") {
+                    $("<p>Ubah Warna Biru..</p>").appendTo(".container");
+                } else {
+                    $("<p>Ubah Warna Putih..</p>").appendTo(".container");
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

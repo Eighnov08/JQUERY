@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Efek</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0
+        }
+        
+        body {
+            background-color: #ccc;
+            font-family: calibri;
+        }
+        
+        .container {
+            width: 500px;
+            margin: 10px auto;
+        }
+        
+        .list-form {
+            margin: 10px 0;
+            position: relative;
+        }
+        
+        .input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 187px
+        }
+        
+        .hidden-form {
+            margin-top: 10px;
+            background-color: #e67e22;
+            padding: 10px 34px;
+            border-radius: 5px;
+            color: #fff;
+            display: none;
+        }
+        
+        .hidden-form>h1 {
+            text-align: center
+        }
+        
+        button {
+            padding: 3px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="toggle">Show/Hide</button>
+        <div class="hidden-form">
+            <h1>Registration</h1>
+            <form>
+                <div class="list-form">
+                    <label>Change style ?</label>
+                    <select>
+					<option value="#e67e22">-- Default --</option>
+					<option value="#e74c3c">Alizarin</option>
+					<option value="#9b59b6">Amethyst</option>
+					<option value="#16a085">Green Sea</option>
+					<option value="#3498db">Peter River</option>
+				</select>
+                </div>
+                <div class="list-form">
+                    <input type="text" name="" placeholder="Your Name" class="input" data-title="Please Input Your Name">
+                </div>
+                <div class="list-form">
+                    <input type="email" name="" placeholder="Your Email" class="input" data-title="Please Input Your Email">
+                </div>
+                <div class="list-form">
+                    <input type="text" name="" placeholder="Phone Number" class="input number" data-title="Please Input Your Phone Number">
+                </div>
+                <div class="list-form">
+                    <button type="submit" disabled>Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#toggle").click(function() {
+                $(".hidden-form").fadeToggle("slow");
+
+                $(".input").focus(function() {
+                    $(this).animate({
+                        width: '400px',
+                        "margin-left": "10px"
+                    }, 1000);
+                    $(this).css({
+                        "background-color": "#81ecec"
+                    })
+                })
+
+                $(".input").blur(function() {
+                    $(this).animate({
+                        width: '187px',
+                        "margin-left": "0px"
+                    }, 1000);
+                    $(this).css({
+                        "background-color": "#ffffff"
+                    })
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

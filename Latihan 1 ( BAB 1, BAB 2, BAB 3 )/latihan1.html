@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 700px;
+            border: 1px solid #000000;
+            padding: 10px;
+            margin: 15px;
+        }
+        
+        .bg {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>My jQuery <span>....</span></h2>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".container").addClass("bg");
+
+            $("h2").css({
+                textAlign: "center",
+                color: "#ffffff",
+                backgroundColor: "red",
+                padding: "10px"
+            })
+
+            $("span").html("Website")
+
+            $("<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>").appendTo(".container");
+
+            $("body").css({
+                color: "#ffffff"
+            })
+
+            $("p").css({
+                padding: "10px"
+            })
+        })
+    </script>
+</body>
+
+</html>

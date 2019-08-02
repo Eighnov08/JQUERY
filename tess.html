@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .div {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50rem;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+            /* -webkit-animation: breathing 1s ease-out infinite normal; */
+        }
+        
+        .div2 {
+            -webkit-animation: breathing 1s ease-out infinite normal;
+        }
+        
+        @-webkit-keyframes breathing {
+            0% {
+                -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+            }
+            50% {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+            100% {
+                -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" class="pencet">pencet</a>
+    <div class="i">
+        <div class='div'></div>
+        <a href="" class="info">
+            oi
+        </a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".pencet").click(function() {
+                $(".div").addClass("div2");
+                return false;
+            })
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <style>
+        .form-red:focus {
+            box-shadow: 0 0 0 0.2rem #ff7675;
+        }
+    </style>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="POST">
+                    <div class="form-group">
+                        <div class="alert alert-danger mt-3" role="alert" id="error"></div>
+
+                        <label class="mt-2">Nama :</label>
+                        <input type="text" name="username" id="username" placeholder="Username" class="form-control"><br>
+
+                        <label>Alamat :</label>
+                        <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat"></textarea><br>
+
+                        <label>Email :</label>
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-control"><br>
+
+                        <select id="jenkel" class="form-control">
+                            <option value=""> -- Jenis Kelamin -- </option>
+                            <option value="Pria"> Pria </option>
+                            <option value="Wanita"> Wanita </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit">Save</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form method="POST" class="mt-2">
+                    <label>Nama : <span id="value_name"></span></label><br>
+                    <label>Alamat : <span id="value_alamat"></span></label><br>
+                    <label>Email : <span id="value_email"></span></label><br>
+                    <label>Jenis Kelamin : <span id="value_jenkel"></span></label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+        $(document).ready(function() {
+            $("#error").hide();
+
+            function alert(selector, text) {
+                $("#error").show();
+                var val = text;
+                $("#error").text(val + " Wajib Diisi!!!");
+                selector.css({
+                    boxShadow: "0 0 0 0.2rem #ff7675"
+                });
+            }
+
+            function alert_hide(selector) {
+                $("#error").hide();
+                selector.css({
+                    boxShadow: "none"
+                });
+            }
+
+            function blur(selector) {
+                selector.blur(function() {
+                    if (selector.val() == "") {
+                        selector.css({
+                            boxShadow: "0 0 0 0.2rem #ff7675"
+                        })
+                    } else {
+                        selector.css({
+                            boxShadow: "none"
+                        })
+                    }
+                })
+            }
+
+            function focus(selector) {
+                selector.focus(function() {
+                    selector.css({
+                        boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
+                    })
+                })
+            }
+
+            // USERNAME
+            $("#submit").click(function() {
+                focus($("#username"));
+                blur($("#username"));
+
+                focus($("#alamat"));
+                blur($("#alamat"));
+
+                focus($("#email"));
+                blur($("#email"));
+
+                focus($("select"));
+                blur($("select"));
+
+                if ($("#username").val() == "") {
+                    alert($("#username"), "Nama")
+
+                } else if ($("#username").val() != "") {
+                    alert_hide($("#username"))
+
+                    // ALAMAT
+                    if ($("#alamat").val() == "") {
+                        alert($("#alamat"), "Alamat")
+
+                    } else if ($("#alamat").val() != "") {
+                        alert_hide($("#alamat"))
+
+                        // EMAIL
+                        if ($("#email").val() == "") {
+                            alert($("#email"), "Email")
+
+                        } else if ($("#email").val() != "") {
+                            alert_hide($("#email"))
+
+                            // JENIS KELAMIN
+                            if ($("select option:selected").val() == "") {
+                                alert($("select"), "Jenis Kelamin")
+
+                            } else if ($("select option:selected").val() != "") {
+                                alert_hide($("select"))
+
+                                var nama = $("#username").val();
+                                var alamat = $("#alamat").val();
+                                var email = $("#email").val();
+                                var jenkel = $("select option:selected").val();
+                                $("#value_name").text(nama);
+                                $("#value_alamat").text(alamat);
+                                $("#value_email").text(email);
+                                $("#value_jenkel").text(jenkel);
+                            }
+                        }
+                    }
+                }
+                return false;
+            })
+        })
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

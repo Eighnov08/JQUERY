@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Efek</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0
+        }
+        
+        body {
+            background-color: #ccc;
+            font-family: calibri;
+        }
+        
+        button {
+            padding: 3px
+        }
+        
+        .box {
+            background-color: yellow;
+            padding: 20px;
+            width: 60px;
+            position: absolute;
+            top: 50px;
+            left: 150px;
+        }
+        
+        img {
+            padding: 10px;
+        }
+        
+        .hidden-form {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <div class="hidden-form">
+            <img src="planet.jpg">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("<p class='box'>PLANET</p>").prependTo(".hidden-form");
+
+            $("#hide").click(function() {
+                $("img").fadeOut("fast", function() {
+                    $(".box").fadeOut("slow", function() {
+                        $("body").css({
+                            "background-color": "#ccc"
+                        })
+
+                        $("img").animate({
+                            borderRadius: "0rem"
+                        }, 4000);
+
+                        $(this).animate({
+                            top: "50px",
+                            width: "60px"
+                        }, 2000);
+
+                        setTimeout(function() {
+                            alert("sembuyi")
+                        }, 300)
+                    })
+                })
+            })
+
+            $("#show").click(function() {
+                $("body").css({
+                    "background-color": "black"
+                })
+
+                $(".hidden-form").fadeIn("fast", function() {
+                    $("img").fadeIn("fast", function() {
+                        $(this).animate({
+                            borderRadius: "50rem"
+                        }, 4000);
+
+                        $(".box").fadeIn("fast", function() {
+                            $(this).animate({
+                                top: "350px",
+                                width: "120px"
+                            }, 2000);
+                        })
+                    })
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

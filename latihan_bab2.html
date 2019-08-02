@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .wrap {
+            width: 600px;
+            height: 100px;
+            border: 1px solid #000000;
+            padding: 10px;
+            margin: 15px;
+        }
+        
+        .box {
+            background-color: red;
+            color: white;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <p>BELAJAR jQuery</p>
+    </div>
+    <div class="box">
+        <ul>
+            <li title="HTML">HTML</li>
+            <li title="CSS">CSS</li>
+            <li title="PHP">PHP</li>
+            <li title="JS">JAVASCRIPT</li>
+        </ul>
+    </div>
+    <div>
+        <p>Selamat Datang di <span id="text">Dumet School</span></p>
+    </div>
+    <div>
+        <input type="text">
+        <p id="tampil"></p>
+    </div>
+
+    <script>
+        // APPEND = menyisipkan elemen HTML di dalam target dan diletakkan di paling BAWAH dari elemen target
+        // PREPEND = menyisipkan elemen HTML di dalam target dan diletakkan di paling ATAS dari elemen target
+        // AFTER = menyisipkan elemen HTML di luar target dan letaknya SETELAH elemen target
+        // BEFORE = menyisipkan elemen HTML di luar target dan letaknya SEBELUM elemen target
+
+        // $(document).ready(function() {
+        //     $("<div class='box'>Append</div>").appendTo(".wrap");
+        //     $("<div class='box'>Prepend</div>").prependTo(".wrap");
+        //     $(".wrap").after("<div class='box'>After</div>");
+        //     $(".wrap").before("<div class='box'>Before</div>");
+        // })
+
+
+
+
+
+
+
+        // JQUERY REMOVE EMPTY
+
+        // $(document).ready(function() {
+        //     $(".box").find("li:nth-child(2), li:nth-child(3)").remove(); // REMOVE
+        //     $(".box").empty(); // EMPTY
+        // })
+
+
+
+
+
+
+        // JQUERY TEXT HTML
+        // text = tak bisa membaca format html
+        // html = bisa membaca format html
+
+        // $(document).ready(function() {
+        //     $("#text").text("Website Kami");
+        //     $("#text").html("<strong>Website Kami</strong>");
+        // })
+
+
+
+
+
+        // VAL = khusus untuk menarik nilai di form
+
+        // $(document).ready(function() {
+        //     $("input").keyup(function() {
+        //         var words = $(this).val();
+
+        //         $("#tampil").text(words);
+        //     })
+        // })
+
+
+
+
+
+
+        // JQUERY ATTR = untuk menarik value di attribute html
+
+        // $(document).ready(function() {
+        //     $("li").click(function() {
+        //         var text = $(this).attr("title");
+
+        //         alert("Anda Klik: " + text);
+        //     })
+        // })
+    </script>
+</body>
+
+</html>

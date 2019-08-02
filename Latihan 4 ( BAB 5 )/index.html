@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Latihan 4</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 20px 0 0 20px
+        }
+        
+        li {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li id="box1"></li>
+        <li id="box2"></li>
+        <li id="box3"></li>
+        <li id="box4"></li>
+        <li id="box5" class="blue"></li>
+        <li id="box6" class="blue"></li>
+        <li id="box7"></li>
+        <li id="box8"></li>
+    </ul>
+    <script>
+        $(document).ready(function() {
+            $("li").css({
+                "background-color": "grey",
+                "width": "100",
+                "height": "100"
+            });
+
+            $("#box1").siblings().css({
+                "background-color": "lightgreen"
+            });
+
+            $("li").first().css({
+                "float": "left"
+            });
+
+            $("#box2").next().css({
+                "background-color": "aqua"
+            });
+
+            $("li").last().css({
+                "background-color": "red",
+                "width": "200"
+            });
+
+            $("#box1").nextUntil("#box5").css({
+                "margin-top": "200px"
+            });
+
+            // sesuai index
+            $("li").eq(1).css({
+                "background-color": "yellow"
+            });
+
+            // filter
+            $("li").filter(".blue").css({
+                "background-color": "blue"
+            });
+        })
+    </script>
+</body>
+
+</html>

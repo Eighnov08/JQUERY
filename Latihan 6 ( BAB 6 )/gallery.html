@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Efek</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0
+        }
+        
+        body {
+            background-color: #ccc;
+            font-family: calibri;
+        }
+        
+        button {
+            padding: 20px 50px;
+            background-color: aquamarine;
+            border: none;
+            font-size: 20px;
+            margin: 10px;
+        }
+        
+        .box {
+            background-color: yellow;
+            padding: 20px;
+            width: 60px;
+            position: absolute;
+            top: 50px;
+            left: 150px;
+        }
+        
+        img {
+            padding: 10px;
+        }
+        
+        .imgSmall {
+            display: none;
+        }
+        
+        .imgSmall img {
+            position: absolute;
+            left: 0px;
+        }
+        
+        #close {
+            margin-left: 28%;
+        }
+        
+        .imgBig {
+            display: none;
+            margin-top: 19%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="gallery">Gallery</button>
+        <div class="gallery">
+            <div class="imgSmall">
+                <img src="image/Ajangprediksi.com-Jersey-Manchester-United-Terbaru.jpg" width="30%" class="img" id="img1">
+                <img src="image/CNZgZvbUYAI-KPD.jpg" width="30%" class="img" id="img2">
+                <img src="image/Cuplikan-Gol-Manchester-United-3-0-Aston-Villa-Premier-League.jpg" width="30%" class="img" id="img3">
+                <img src="image/close_icon.png" id="close">
+            </div>
+            <img src="image/Cuplikan-Gol-Manchester-United-3-0-Aston-Villa-Premier-League.jpg" class="imgBig" width="93%">
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#gallery").click(function() {
+                $(".imgSmall").fadeIn("slow", function() {
+                    $("#img3").animate({
+                        left: "62%"
+                    }, 1000)
+
+                    $("#close").animate({
+                        left: "90%",
+                        margin: "0px"
+                    }, 1000)
+
+                    $("#img2").animate({
+                        left: "31%"
+                    }, 1000)
+                });
+
+                $(".img").click(function() {
+                    $(".imgBig").hide();
+                    var a = $(this).attr("src");
+                    $(".imgBig").fadeIn("slow");
+                    $(".imgBig").attr("src", a);
+                })
+            })
+
+            $("#close").click(function() {
+                $(".imgBig").fadeOut("slow");
+                $("#img3").animate({
+                    left: "0"
+                }, 1000)
+
+                $("#close").animate({
+                    left: "0",
+                    marginLeft: "28%"
+                }, 1000)
+
+                $("#img2").animate({
+                    left: "0"
+                }, 1000, function() {
+                    $(".imgSmall").fadeOut("slow");
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>
